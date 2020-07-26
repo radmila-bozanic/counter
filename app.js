@@ -14,10 +14,13 @@ console.log(btns);
 // a u nasem slucaju taj element je <button></button>
 btns.forEach(function(btn) {
     // Ovde osluskujemo dogadjaj "click", a potom uz pomoc bezimene f-je definisemo sta se dogadja kada se desi klik.
+            // e.currentTarget: e - event object; objekat koji nastaje kada se klikne.
     btn.addEventListener("click", function(e) {
         // u promenljivu styles smestamo objekat (svi tagovi, odnosno elementi su objekti u DOM-u),
         // a objekat koji je smesten u styles je pozvan preko bezimene f-je koja aktivira event listener za taj objekat,
         // a to nam omogucava currentTarget funkcija.
+        // currentTarget - f-ja; pokazuje nam koje dugme je kliknuto.
+        // classList - f-ja ili preciznije property koji nam pokazuje koje CSS klase nas event object ima; decrease/reset/increase.
         const styles = e.currentTarget.classList;
         console.log(e);
         // da li styles sadzi rec "decrease" - ispitujemo preko if-a
